@@ -1,4 +1,5 @@
 import './App.css';
+import { Route, NavLink } from "react-router-dom";
 import Heading from './components/Heading';
 import Input from './components/Input';
 import Output from './components/Output';
@@ -9,20 +10,26 @@ function App() {
   return (
     <div className="root">
       <header>
-        <img src="https://media1.giphy.com/media/xT0xewY8zwC6bva1pK/giphy.gif" width="100px" height="100px"></img>
-        <p>
-          under construction
-        </p>
+        <h1>text flipper</h1>
       </header>
-      
-      <Heading />
-      <Input />
-      <Output />
-      <Button />
-      <Footer />
 
+      <nav className="navLink">
+        <NavLink to="/">Main</NavLink>
+        <NavLink to="/footer">Footer</NavLink>
+      </nav>
+
+      <Route path="/" exact>
+        <Heading />
+        <Input />
+        <Output />
+        <Button />
+      </Route>
+
+      <Route path="/footer">
+        <Footer />
+      </Route>
     </div>
   );
-}
+};
 
 export default App;

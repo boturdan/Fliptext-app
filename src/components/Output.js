@@ -2,7 +2,7 @@
 
 function Output() {
     return (
-    <p>this is an output</p>
+    <span>this is an output</span>
     );
 };
 

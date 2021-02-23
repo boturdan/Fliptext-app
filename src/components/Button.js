@@ -2,7 +2,7 @@
 
 function Button() {
     return (
-    <p>this is a button</p>
+    <span>this is a button</span>
     );
 };
 

@@ -2,7 +2,7 @@
 
 function Heading() {
     return (
-    <p>this is a heading</p>
+    <span>this is a heading</span>
     );
 };
 

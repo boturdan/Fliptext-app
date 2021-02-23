@@ -2,7 +2,7 @@
 
 function Footer() {
     return (
-    <p>this is a footer</p>
+    <span>this is a footer</span>
     );
 };
 
