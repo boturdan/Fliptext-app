@@ -1,27 +1,19 @@
 "use strict"
 
-import { useState } from 'react';
+function Input(props) {
 
-function Input() {
-    const [state, setState] = useState ({
-        textInput: ""
-    });
+    function handleChange(evt) {
+        props.updateFunction(evt.target.value)
+    }
 
     return (
         <form>
             <label>
                 Please enter your text here: 
-                <textarea
-                    value={state.textInput}
-                    onChange={handleChange}
-                />
+                <textarea onChange={handleChange} />
             </label>
         </form>
     );
-
-    function handleChange(evt) {
-        setState({ textInput: evt.target.value });
-    }
 };
 
 export default Input;

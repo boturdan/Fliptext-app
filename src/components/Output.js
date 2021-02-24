@@ -1,8 +1,12 @@
 "use strict"
 
-function Output() {
+function Output(props) {
     return (
-    <span>this is an output</span>
+        <form>
+        <label>
+            <textarea value={props.text} />
+        </label>
+    </form>
     );
 };
 
