@@ -11,8 +11,7 @@ function Input() {
         <form>
             <label>
                 Please enter your text here: 
-                <input
-                    type="textarea"
+                <textarea
                     value={state.textInput}
                     onChange={handleChange}
                 />

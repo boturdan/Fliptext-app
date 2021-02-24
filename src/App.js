@@ -8,18 +8,14 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="root">
-      <header>
-        <h1>text flipper</h1>
-      </header>
-
+    <div>
+      <Heading />
       <nav className="navLink">
         <NavLink to="/">Main</NavLink>
         <NavLink to="/footer">Footer</NavLink>
       </nav>
 
       <Route path="/" exact>
-        <Heading />
         <Input />
         <Output />
         <Button />

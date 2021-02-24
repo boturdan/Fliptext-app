@@ -2,7 +2,7 @@
 
 function Heading() {
     return (
-    <span>this is a heading</span>
+        <h1>text flipper</h1>
     );
 };
 

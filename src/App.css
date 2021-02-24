@@ -1,6 +1,24 @@
-.root {
+#root {
   background-color: #282c34;
   color: whitesmoke;
+}
+
+h1, .navLink, label {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 50%;
+  height: 150px;
+
 }
 
 span {
