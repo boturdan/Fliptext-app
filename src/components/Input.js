@@ -9,7 +9,7 @@ function Input(props) {
     return (
         <form>
             <label>
-                Please enter your text here: 
+                please enter your text here: 
                 <textarea name="original" onChange={handleChange} />
             </label>
         </form>
