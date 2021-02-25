@@ -8,6 +8,7 @@ import Button from './components/Button';
 import Footer from './components/Footer';
 
 function App() {
+
   const [text, setText] = useState("Hello")
 
   function updateText(t) {
@@ -24,7 +25,7 @@ function App() {
 
       <Route path="/" exact>
         <Input updateFunction={updateText} />
-        <Output text={text} greet={"Hi Dan"} />
+        <Output text={text} />
         <Button />
       </Route>
 

@@ -10,7 +10,7 @@ function Input(props) {
         <form>
             <label>
                 Please enter your text here: 
-                <textarea onChange={handleChange} />
+                <textarea name="original" onChange={handleChange} />
             </label>
         </form>
     );
