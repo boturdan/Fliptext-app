@@ -1,8 +1,16 @@
 "use strict"
 
-function Heading() {
+import React from 'react';
+
+function Heading(props) {
+
+    const australianHeading = props.flipString("text flipper");
+    const heading = "text flipper";
+
     return (
-        <h1>text flipper</h1>
+
+        props.isAustralian ? <h1>{ australianHeading }</h1> : <h1>{ heading }</h1>
+
     );
 };
 

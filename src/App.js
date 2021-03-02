@@ -1,7 +1,8 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, NavLink } from "react-router-dom";
 import Heading from './components/Heading';
+import PopUpAustralian from './components/PopUpAustralian';
 import Input from './components/Input';
 import Output from './components/Output';
 import Button from './components/Button';
@@ -52,7 +53,17 @@ for (let i in flipTable) {
 
 function App() {
 
-  const [text, setText] = useState("hello")
+  const [text, setText] = useState("")
+
+  const [isAustralian, setIsAustralian] = useState(true)
+
+  const[data, setData] = useState()
+
+  useEffect(async () => {
+    const response = await fetch("https://api.chucknorris.io/jokes/random")
+    const resData = await response.json()
+    setData(resData)
+  }, []);
 
   function updateText(t) {
     setText(flipString(t))
@@ -72,21 +83,19 @@ function App() {
 
   return (
     <div>
-      <Heading />
+      <Heading isAustralian={isAustralian} flipString={flipString} />
+
       <nav className="navLink">
         <NavLink to="/">main</NavLink>
         <NavLink to="/footer">footer</NavLink>
       </nav>
-      <Route path="/login">
-			{user 
-				? <Redirect to="/" />
-			  : <LoginPopup />
-			}
-		</Route>
+
       <Route path="/" exact>
+        <PopUpAustralian isAustralian={isAustralian} />
         <Input updateFunction={updateText} />
         <Output text={text} />
         <Button text={text}/>
+        <p>{ data.value }</p>
       </Route>
 
       <Route path="/footer">

@@ -37,3 +37,13 @@ span {
   margin-bottom: 20px;
   padding: 1em;
 }
+
+.popup {
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border: 2px solid gray;
+  background: rgb(255, 0, 0);
+}
