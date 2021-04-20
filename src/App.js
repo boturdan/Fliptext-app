@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Route, NavLink } from "react-router-dom";
 import Heading from './components/Heading';
 import PopUpAustralian from './components/PopUpAustralian';
@@ -7,6 +7,7 @@ import Input from './components/Input';
 import Output from './components/Output';
 import Button from './components/Button';
 import Footer from './components/Footer';
+import ChuckJoke from './components/Chuck';
 
 
 // Thanx to David Faden for this idea and the code here.
@@ -54,16 +55,7 @@ for (let i in flipTable) {
 function App() {
 
   const [text, setText] = useState("")
-
-  const [isAustralian, setIsAustralian] = useState(true)
-
-  const[data, setData] = useState()
-
-  useEffect(async () => {
-    const response = await fetch("https://api.chucknorris.io/jokes/random")
-    const resData = await response.json()
-    setData(resData)
-  }, []);
+  const [isAustralian, setIsAustralian] = useState(false)
 
   function updateText(t) {
     setText(flipString(t))
@@ -82,8 +74,10 @@ function App() {
   }
 
   return (
-    <div>
-      <Heading isAustralian={isAustralian} flipString={flipString} />
+
+    <div style={{transform: isAustralian ? 'rotate(180deg)' : 'rotate(0deg)'}}>
+
+      <Heading  />
 
       <nav className="navLink">
         <NavLink to="/">main</NavLink>
@@ -91,11 +85,11 @@ function App() {
       </nav>
 
       <Route path="/" exact>
-        <PopUpAustralian isAustralian={isAustralian} />
+        <PopUpAustralian isAustralian={isAustralian} setIsAustralian={setIsAustralian} />
         <Input updateFunction={updateText} />
         <Output text={text} />
         <Button text={text}/>
-        <p>{ data.value }</p>
+        <ChuckJoke />
       </Route>
 
       <Route path="/footer">
